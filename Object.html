@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScriptObject</title>
+</head>
+<body>
+    <script>
+      /*  let user = 
+        {
+            name : "laxman",
+            age : 24,
+            job : "software Engineer",
+            location : "bangalore"
+        };
+
+        alert("Name : " + user.name);
+        alert("Age : " + user.age);
+        alert("Job : " + user.job);
+        alert("Locations : " + user.location);
+
+        alert("Multi-word Properties"); 
+         'use strict';
+         let user = {};
+    
+         // set
+        user["likes birds"] = true;
+     
+        // get
+        alert(user["likes birds"]); // true
+    
+        // delete
+        delete user["likes birds"];
+
+        // obtain property name as the result
+        let user = {
+        name: "laxman",
+        age: 30,
+        location : "bangalore"
+        };
+
+       // let key = prompt("What do you want to know about the user?", "name");
+
+        // access by variable
+      //  alert( user[key] ); // John (if enter "name")    
+
+        // access the properties by loop in 
+        for (let k in user)
+        {
+            document.writeln( k + " : " +  user[k] + "<br>");
+        }    
+        document.writeln("=======================================" + "<br>");
+        let codes = {
+                "49": "Germany",
+                "41": "Switzerland",
+                "44": "Great Britain",
+                // ..,
+                "1": "USA"
+                };
+
+                for(let code in codes) {
+                document.writeln("In_odered :" + code + "<br>"); // 1, 41, 44, 49
+                }
+                // COnstant object can be changed 
+                // here constant is applied on object reference variable , so the reference variable will be pointing the same object always it can't change but values can change
+                
+                const obj = {
+                        name : "John",
+                        age : 24
+                };
+                obj.age = 22;
+                document.write( "Changed Value :" + obj.age);
+                // CLoning Object 
+                let user1 = {
+                name: "John",
+                age: 30
+            };
+
+            let clone = {}; // the new empty object
+
+            // let's copy all user properties into it
+        for (let key in user1) {
+        clone[key] = user1[key];
+        }
+
+        // now clone is a fully independant clone
+        clone.name = "Pete"; // changed the data in it
+
+        document.writeln( user1.name ); // still John in the original object
+        
+        let user = {
+                name : "laxman",
+                age : 22
+        };
+        let id = Symbol("id");
+
+        user[id] = "ID value";
+        alert(user[id]);
+        
+        'use strict';
+    let id = Symbol("id");
+    let user = {
+      name: "John",
+      age: 30,
+      [id]: 123
+    };
+
+    let ab = () => alert(this.name);
+    ab();
+    
+    for (let key in user) alert(key); // name, age (no symbols)
+    
+    // the direct access by the symbol works
+    alert( "Direct: " + user[id] );
+    
+    let user = {
+  name: "John",
+  money: 1000,
+
+  [Symbol.toPrimitive](hint) {
+    alert(`hint: ${hint}`);
+    return hint == "string" ? `{name: "${this.name}"}` : this.money;
+  }
+};
+
+// conversions demo:
+alert(user); // hint: string -> {name: "John"}
+alert(+user); // hint: number -> 1000
+alert(user + 500); // hint: default -> 1500
+
+
+function User(name)
+{
+    this.name = name;
+    this.isAdmin = true;
+}
+let user = new User("laxman");
+document.writeln(user.name + " " + user.isAdmin);
+
+let user = function()
+{
+    this.name = name;
+    this.isAdmin = false;  
+};
+*/
+'use strict';
+    function User() {
+      alert(new.target);
+    }
+    
+    // without "new":
+    User(); // undefined
+    
+    // with "new":
+    new User(); // function User { ... }
+
+    let str = "laxman";
+    alert(str.toLocaleLowerCase());
+    alert(str.toLocaleUpperCase());
+    let str1 = 'S' + str[0];
+    alert(str1);
+
+    </script>
+</body>
+</html>

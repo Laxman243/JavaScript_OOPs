@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class User {
+        constructor (username, email, phone)
+        {
+            this.username = username;
+            this.email = email;
+            this.phone = phone;
+        }
+        // static method 
+        static countUser()
+        {
+            document.writeln("there are 10 users" +"<br>");
+        }
+        // non static method
+        register()
+        {
+            document.writeln(this.username + "is now register");
+        }
+    }
+   // User.countUser();
+    //let bob = new User('bob' , 'bo@gmail.com', '9703681540');
+    //bob.register();
+    
+    // inherit the class 
+
+    class Member extends User {
+        constructor (username, email, phone, password)
+        {
+            super(username, email, phone);
+            this.password = password;
+        }
+    };
+    Member.prototype.getPackage()
+        {
+            document.writeln(this.username + "is subscribe");
+        }
+    let ab = new Member('laxman','lax@gmail.com','090909090','Dewas');
+    let ab1 = new Member('laxman','lax@gmail.com','090909090','Dewas');
+    let ab2 = new Member('laxman','lax@gmail.com','090909090','Dewas');
+    alert(ab instanceof User);
+    alert(ab1 instanceof User);
+    alert(ab2 instanceof User);
+    ab.getPackage();
+    ab.register();
+    document.writeln(ab.username + " " + ab.email + " " + ab.phone + " " + ab.password);
+    </script>
+</body>
+</html>
